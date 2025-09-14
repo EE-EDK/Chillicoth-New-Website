@@ -5,282 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chillicothe Iron & Steel, Inc.</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Modern CSS Reset */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* "STEEL" THEME & COLOR PALETTE */
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            background-color: #212529;
-            color: #e9ecef;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-
-        h1 { font-size: 3.5rem; font-weight: 700; }
-        h2 { font-size: 2.5rem; font-weight: 600; border-bottom: 3px solid #495057; padding-bottom: 0.75rem; margin-bottom: 2rem; }
-        h3 { font-size: 1.75rem; font-weight: 600; color: #BE235D; }
-
-        .container {
-            width: 90%;
-            max-width: 1300px;
-            margin: auto;
-            overflow: hidden;
-            padding: 3rem 0;
-            position: relative;
-            z-index: 1;
-        }
-        
-        section {
-             padding: 4rem 2rem;
-        }
-        
-        section.alternate-bg {
-            background-color: #2c3034;
-        }
-
-        /* Header & Navigation */
-        .main-header, .main-footer, .main-nav {
-            background: #1a1d20;
-            position: relative;
-            z-index: 1000;
-        }
-
-        .main-header {
-            color: #fff;
-            padding: 1.5rem 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        .main-header .logo-title {
-            font-size: 2.2rem; margin: 0; font-weight: 700; letter-spacing: 1px;
-        }
-
-        .main-header .subtitle {
-            font-size: 1.1rem; font-weight: 400; opacity: 0.8;
-        }
-
-        .main-nav {
-            padding: 0.75rem 0;
-        }
-
-        .main-nav ul {
-            list-style: none; display: flex; justify-content: center; flex-wrap: wrap;
-        }
-
-        .main-nav ul li a {
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            padding: 1rem 1.8rem;
-            text-decoration: none;
-            transition: all 0.2s ease-in-out;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 0.25rem 0.5rem;
-            border-radius: 5px;
-            background-color: #495057;
-            position: relative;
-            top: 0;
-            box-shadow: 0 4px #212529;
-        }
-
-        .main-nav ul li a:hover, .main-nav ul li a.active {
-            background: #BE235D; color: white; top: 2px; box-shadow: 0 2px #a11c4e;
-        }
-        
-        /* HERO SECTION */
-        #hero {
-            position: relative;
-            height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: #111;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            z-index: 2;
-            transform: translateY(100px);
-        }
-        
-        #hero h1 {
-            position: relative;
-            color: #555;
-            -webkit-text-stroke: 1px #777;
-            margin: 0;
-            font-size: clamp(2rem, 8vw, 4.5rem);
-        }
-
-        #hero h1::after {
-            content: 'Welcome to Chillicothe Iron & Steel';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(45deg, #ff8c00, #ff4500, #ffd700, #ff6347);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: pour-reveal-animation 2.5s linear 3s infinite, scroll-colors 2.5s linear 3s infinite;
-        }
-
-        @keyframes pour-reveal-animation {
-            0% { clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%); }
-            100% { clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); }
-        }
-        
-        @keyframes scroll-colors {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-
-        #hero p {
-            color: #f8f9fa;
-            font-size: 1.3rem;
-            margin-top: 5rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-            animation: fade-in 2s ease 1s forwards;
-            opacity: 0;
-        }
-        
-        @keyframes fade-in {
-            to { opacity: 1; }
-        }
-
-        .ladle-container {
-            position: absolute;
-            top: 15%;
-            left: 50%;
-            width: 150px;
-            height: 180px;
-            transform: translateX(300%) rotate(-30deg);
-            z-index: 10;
-            animation: swing-and-tip 3.5s ease-in-out forwards;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            transform-origin: 50% 80%;
-        }
-
-        .ladle { width: 110px; height: 80px; background: linear-gradient(to bottom, #444, #666, #444); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-left-radius: 55px; border-bottom-right-radius: 55px; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); border: 2px solid #333; box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3); overflow: hidden; z-index: 2; }
-        .ladle::before { content: ''; position: absolute; top: 4px; left: 4px; right: 4px; height: 35px; background: radial-gradient(circle at center, #ffecb3, #ffc107, #ff8c00); border-radius: 2px; box-shadow: 0 0 15px 5px #ffd700; z-index: 1; animation: molten-glow 2s ease-in-out infinite alternate; }
-        @keyframes molten-glow { from { box-shadow: 0 0 15px 5px #ffd700; } to { box-shadow: 0 0 25px 8px #ff4500; } }
-        .ladle-trunnion-left { width: 20px; height: 20px; background: linear-gradient(45deg, #555, #888, #555); border-radius: 50%; position: absolute; left: -5px; top: 60%; transform: translateY(-50%); border: 2px solid #444; box-shadow: inset 0 0 5px rgba(0,0,0,0.5); z-index: 3; }
-        .ladle-trunnion-right { width: 20px; height: 20px; background: linear-gradient(45deg, #555, #888, #555); border-radius: 50%; position: absolute; right: -5px; top: 60%; transform: translateY(-50%); border: 2px solid #444; box-shadow: inset 0 0 5px rgba(0,0,0,0.5); z-index: 3; }
-        .ladle-bail-left { width: 8px; height: 90px; background: linear-gradient(to bottom, #777, #aaa, #777); position: absolute; left: 5px; top: 0; border-radius: 2px; box-shadow: 0 0 5px rgba(0,0,0,0.3); z-index: 1; }
-        .ladle-bail-right { width: 8px; height: 90px; background: linear-gradient(to bottom, #777, #aaa, #777); position: absolute; right: 5px; top: 0; border-radius: 2px; box-shadow: 0 0 5px rgba(0,0,0,0.3); z-index: 1; }
-        .ladle-crossbar { width: 140px; height: 15px; background: linear-gradient(to right, #666, #999, #666); position: absolute; top: -15px; left: 50%; transform: translateX(-50%); border-radius: 5px; border: 2px solid #555; box-shadow: 0 5px 10px rgba(0,0,0,0.4); z-index: 1; }
-
-        @keyframes swing-and-tip {
-            0% { transform: translateX(300%) rotate(-30deg); }
-            40% { transform: translateX(-250%) rotate(15deg); }
-            70% { transform: translateX(-250%) rotate(-5deg); }
-            100% { transform: translateX(-250%) rotate(95deg); }
-        }
-        
-        .pour-stream {
-            position: absolute;
-            top: 75%;
-            left: -10%;
-            width: 120%;
-            height: 10px;
-            background: linear-gradient(90deg, #ff8c00, #ff4500, #ffd700);
-            box-shadow: 0 0 15px 5px #ff6347;
-            border-radius: 5px;
-            transform: scaleX(0);
-            transform-origin: left;
-            animation: stream-across 1.5s ease-out 2.8s forwards;
-            z-index: 1;
-        }
-
-        @keyframes stream-across {
-             0% { transform: scaleX(0); }
-             100% { transform: scaleX(1); }
-        }
-        
-        /* STEEL BEAMS STYLES */
-        main {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .steel-beam {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 60px;
-            background: linear-gradient(to right, #4a4a4a 0%, #3a3a3a 10%, #2a2a2a 50%, #3a3a3a 90%, #4a4a4a 100%);
-            box-shadow: inset 0 0 8px rgba(0,0,0,0.6), 0 0 15px rgba(0,0,0,0.4);
-            z-index: 0;
-            display: block;
-        }
-
-        .left-steel-beam {
-            left: 0;
-            border-right: 2px solid #5a5a5a;
-        }
-
-        .right-steel-beam {
-            right: 0;
-            border-left: 2px solid #5a5a5a;
-        }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .grid-item { background: #343a40; padding: 2rem; border: 1px solid #495057; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .grid-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); border-color: #BE235D; }
-        .grid-item h3 { margin-bottom: 1rem; font-size: 1.8rem; }
-        .grid-item p { font-size: 1.05rem; color: #adb5bd; }
-        .content-image { max-width: 100%; height: auto; display: block; margin: 1.5rem auto 2rem auto; border: 2px solid #495057; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
-        .logo-image { max-width: 180px; margin-bottom: 2rem; box-shadow: none; border: none; }
-        section p { font-size: 1.1rem; color: #ced4da; margin-bottom: 1.5rem; line-height: 1.8; }
-        section ul { list-style: none; padding: 0; margin-top: 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.8rem; }
-        section ul li { background-color: #343a40; padding: 0.8rem 1.2rem; border-left: 5px solid #BE235D; margin-bottom: 0.5rem; font-size: 1.1rem; color: #f8f9fa; border-radius: 4px; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
-        #contact { background-color: #1a1d20; }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2.5rem; }
-        .contact-card { background: #2c3034; padding: 2.5rem 2rem; text-align: center; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-top: 5px solid #BE235D; }
-        .contact-card .icon { font-size: 3.5rem; color: #f8f9fa; margin-bottom: 1rem; }
-        .contact-card h4 { font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700; }
-        .contact-card p, .contact-card a { font-size: 1.1rem; color: #ced4da; text-decoration: none; line-height: 1.5; }
-        .contact-card a { color: #BE235D; font-weight: 600; transition: color 0.3s ease; }
-        .contact-card a:hover { color: #d64a7e; text-decoration: underline; }
-        .main-footer { color: #fff; text-align: center; padding: 2.5rem 0; font-size: 1rem; border-top: 1px solid #343a40; }
-        .staff-grid { margin-top: 2rem; text-align: center; }
-
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .steel-beam { display: none; }
-        }
-        
-        @media (max-width: 768px) {
-            .main-header .logo-title { font-size: 1.8rem; }
-            .main-header .subtitle { font-size: 0.9rem; }
-            .main-nav ul { flex-direction: column; align-items: center; }
-            .main-nav ul li a { width: 90%; margin: 0.3rem 0; }
-            #hero { height: 50vh; }
-            h2 { font-size: 2rem; }
-            .container { width: 100%; padding: 2rem 1rem; border-left: none; border-right: none;}
-            .grid, .contact-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -341,34 +66,40 @@
 
         <section id="projects" class="container">
             <h2>Our Featured Projects</h2>
-            <div class="grid">
-                <div class="grid-item">
-                    <h3>Recent Projects</h3>
-                    <ul>
-                        <li>CENTERPOINTE HOSPITAL</li>
-                        <li>HOPEWELL ELEMENTARY SCHOOL</li>
-                        <li>PARK HILL MIDDLE SCHOOL</li>
-                        <li>OUR LADY OF LOURDES INTERPARISH SCHOOL</li>
-                        <li>HEARTLAND COMMUNITY CHURCH</li>
-                        <li>SEDALIA POLICE STATION</li>
-                    </ul>
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="images/steelframe.jpg" alt="Steel frame of a building">
+                    <div class="gallery-caption">Steel frame of a building</div>
                 </div>
-                <div class="grid-item">
-                    <h3>More Projects</h3>
-                    <ul>
-                        <li>MORGAN COUNTY FEMA SAFE ROOM GYM</li>
-                        <li>PRAIRE STAR ELEMENTARY SCHOOL</li>
-                        <li>DELTA TAU DELTA</li>
-                        <li>UNIVERSITY OF MISSOURI HOSPITAL PATIENT CARE TOWER</li>
-                    </ul>
+                <div class="gallery-item">
+                    <img src="images/cis_01.jpg" alt="Project Image 2">
+                    <div class="gallery-caption">Project Image 2</div>
                 </div>
-                <div class="grid-item">
-                    <h3>Reference Letter</h3>
-                    <p>Click here for a reference letter from a satisfied customer.</p>
-                    <a href="images/Shipp_Letter.jpg" style="color: #BE235D; font-weight: bold;">View Letter</a>
+                <div class="gallery-item">
+                    <img src="images/cis_05.jpg" alt="Project Image 3">
+                    <div class="gallery-caption">Project Image 3</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/cis_06.jpg" alt="Project Image 4">
+                    <div class="gallery-caption">Project Image 4</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/cis_current.jpg" alt="Current Facility">
+                    <div class="gallery-caption">Current Facility</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/lifts.jpg" alt="Lifts">
+                    <div class="gallery-caption">Lifts</div>
                 </div>
             </div>
         </section>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
 
         <section id="equipment" class="container alternate-bg">
             <h2>Equipment & Capabilities</h2>
@@ -415,31 +146,42 @@
 
         <section id="contact" class="container alternate-bg">
             <h2>Connect With Us</h2>
-            <p>We're ready to assist with your next project. Reach out to our team through your preferred method below.</p>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="icon">&#x1f4de;</div>
-                    <h4>Telephone & Fax</h4>
-                    <p><strong>Phone:</strong> <a href="tel:660-646-2250">660-646-2250</a></p>
-                    <p><strong>Fax:</strong> 660-646-6343</p>
+            <p>We're ready to assist with your next project. Reach out to our team through your preferred method below, or use the form to send us a message directly.</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="icon">&#x1f4de;</div>
+                        <h4>Telephone & Fax</h4>
+                        <p><strong>Phone:</strong> <a href="tel:660-646-2250">660-646-2250</a></p>
+                        <p><strong>Fax:</strong> 660-646-6343</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">&#x1f4e5;</div>
+                        <h4>Mailing Address</h4>
+                        <p>Chillicothe Iron & Steel, Inc.</p>
+                        <p>330 Mitchell Road</p>
+                        <p>P.O. Box 650</p>
+                        <p>Chillicothe, Missouri 64601</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon">&#x1f4bb;</div>
+                        <h4>Our Team</h4>
+                        <p><strong>Kara Rounkles:</strong> President</p>
+                        <p><a href="mailto:kara@cisfab.com">kara@cisfab.com</a></p>
+                        <p><strong>Kent Peterson:</strong> Vice President Sales</p>
+                        <p><a href="mailto:kent@cisfab.com">kent@cisfab.com</a></p>
+                        <p><strong>Armand Peterson:</strong> Engineering Consultant</p>
+                        <p><a href="mailto:apeterson@chillicotheironandsteel.com">apeterson@chillicotheironandsteel.com</a></p>
+                    </div>
                 </div>
-                <div class="contact-card">
-                    <div class="icon">&#x1f4e5;</div>
-                    <h4>Mailing Address</h4>
-                    <p>Chillicothe Iron & Steel, Inc.</p>
-                    <p>330 Mitchell Road</p>
-                    <p>P.O. Box 650</p>
-                    <p>Chillicothe, Missouri 64601</p>
-                </div>
-                <div class="contact-card">
-                    <div class="icon">&#x1f4bb;</div>
-                    <h4>Our Team</h4>
-                    <p><strong>Kara Rounkles:</strong> President</p>
-                    <p><a href="mailto:kara@cisfab.com">kara@cisfab.com</a></p>
-                    <p><strong>Kent Peterson:</strong> Vice President Sales</p>
-                    <p><a href="mailto:kent@cisfab.com">kent@cisfab.com</a></p>
-                    <p><strong>Armand Peterson:</strong> Engineering Consultant</p>
-                    <p><a href="mailto:apeterson@chillicotheironandsteel.com">apeterson@chillicotheironandsteel.com</a></p>
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <p class="form-notice">Note: This form is for demonstration purposes and is not currently functional.</p>
                 </div>
             </div>
         </section>
@@ -454,70 +196,6 @@
         <p>&copy; 2025 Chillicothe Iron & Steel, Inc. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // --- Smooth Scrolling & Active Nav Highlighting ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - (document.querySelector('.main-header').offsetHeight + document.querySelector('.main-nav').offsetHeight),
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        const sections = document.querySelectorAll('main section');
-        const navLinks = document.querySelectorAll('.main-nav ul li a');
-        const headerAndNavHeight = document.querySelector('.main-header').offsetHeight + document.querySelector('.main-nav').offsetHeight;
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - headerAndNavHeight - 20) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href').includes(current)) {
-                    a.classList.add('active');
-                }
-            });
-        });
-
-        // --- Animation Reset on Scroll-to-Top ---
-        const ladleContainer = document.querySelector('.ladle-container');
-        const pourStream = document.querySelector('.pour-stream');
-        let hasAnimatedOnce = false;
-
-        function resetHeroAnimations() {
-            ladleContainer.style.animation = 'none';
-            pourStream.style.animation = 'none';
-
-            ladleContainer.offsetHeight;
-            pourStream.offsetHeight;
-
-            ladleContainer.style.animation = 'swing-and-tip 3.5s ease-in-out forwards';
-            pourStream.style.animation = 'stream-across 1.5s ease-out 2.8s forwards';
-        }
-
-        setTimeout(() => {
-            resetHeroAnimations();
-            hasAnimatedOnce = true;
-        }, 100);
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY <= 5 && hasAnimatedOnce) {
-                resetHeroAnimations();
-            }
-        });
-
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
